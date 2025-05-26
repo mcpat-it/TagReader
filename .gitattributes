@@ -1,2 +1,10 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+_layouts/ export-ignore
+assets/ export-ignore
+images/ export-ignore
+.gitattributes export-ignore
+_config.yml export-ignore
+404.html export-ignore
+CNAME export-ignore
+LICENSE export-ignore

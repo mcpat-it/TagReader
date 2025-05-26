@@ -7,9 +7,9 @@
     {
       "chipFamily": "ESP32-S3",
       "ota": {
-        "md5": "7ea91410c25e34020a93443b81c57f10",
-        "path": "tagreader.ota.bin",
-        "release_url": "https://tagreader.mcpat.com/ota/",
+        "md5": "1a364556ccba861d47e0445b804b69ae",
+        "path": "https://tagreader.mcpat.com/ota/tagreader.ota.bin",
+        "release_url": "https://github.com/mcpat-it/TagReader/releases/tag/v1.0.1",
         "summary": "Adjustments for ESPHome 2025.5.x. Test OTA."
       }
     }
