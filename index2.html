@@ -20,32 +20,9 @@
         <script>
             window.addEventListener("load", function(event) {
                 const button = document.querySelector("esp-web-install-button");
-                const selectEl = document.querySelector("#pick-variant-selector");
-
-                fetch("https://raw.githubusercontent.com/technyon/nuki_hub/binary/ota/beta/dummy.bin").then(function(response) {
-                    if (!response.ok) {
-                        throw new Error("Not 2xx response", {cause: response});
-                    }
-                    else {
-                        for (let i = 0; i < selectEl.options.length; i++) {
-                            const text = selectEl.options[i].value;
-                            if (text == '') {
-                                selectEl.remove(i);
-                                i--;
-                            }
-                        }
-                    }
-                }).catch(function(err) {
-                    for (let i = 0; i < selectEl.options.length; i++) {
-                        const text = selectEl.options[i].value;
-                        if (text.includes('/beta/')) {
-                            selectEl.remove(i);
-                            i--;
-                        }
-                    }
-                });           
+                const selectEl = document.querySelector("#pick-variant-selector");          
                 try{
-                    button.manifest = "https://raw.githubusercontent.com/technyon/nuki_hub/binary/ota/webflash_manifest.json";
+                    button.manifest = "https://tagreader.mcpat.com/firmware/webflash_manifest_s3octal.json";
                     selectEl.addEventListener("change", () => {
                         button.manifest = selectEl.value;
                     });
@@ -63,7 +40,7 @@
                 <ol style='text-align:left'>
                     <li>Connect the ESP device to your computer</br>using USB or serial-to-USB adapter</li></br>
                     <li>Select the firmware variant suitable for</br>your device</li></br>
-                    <li>Click "Connect" and select the correct port</br>or find help if <a href="https://github.com/technyon/nuki_hub" target='_blank' style='color:#aaa;'>no device found</a></li>
+                    <li>Click "Connect" and select the correct port</br>or find help if <a href="https://tagreader.mcpat.com" target='_blank' style='color:#aaa;'>no device found</a></li>
                 </ol>
                 </br>
                 </br>
