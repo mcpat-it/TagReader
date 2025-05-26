@@ -1,0 +1,11 @@
+{
+  "name": "TagReader - ESP32-S3 OCTAL PSRAM",
+  "home_assistant_domain": "esphome",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [{ "path": "firmware/tagreader.factory.bin", "offset": 0 }]
+    }
+  ]
+}

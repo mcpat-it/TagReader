@@ -1,0 +1,17 @@
+{
+  "name": "TagReader - ESP32-S3 OCTAL PSRAM",
+  "version": "1.0.1",
+  "home_assistant_domain": "esphome",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "ota": {
+        "md5": "4ad0b90b0e4d835668a5c57569fe1529",
+        "path": "tagreader.ota.bin",
+        "release_url": "https://tagreader.mcpat.com/ota/",
+        "summary": "Adjustments for ESPHome 2025.5.x. Test OTA."
+      }
+    }
+  ]
+}
