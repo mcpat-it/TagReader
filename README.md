@@ -19,12 +19,11 @@
 This is a demo installer website for [TagReader-ESP32](https://github.com/mcpat-it/TagReader).
 
 <!--[Visit installer website](https://tagreader.mcpat.com/)-->
-
-<div class="meta_for_parser tablespecs" style="visibility:hidden">
-  <button onclick="getElementById('demo').innerHTML=Date()">What is the time?</button>
+<div class="meta_for_parser" style="visibility:hidden">
+  <button class="meta_for_parser" style="visibility:hidden" onclick="getElementById('demo').innerHTML=Date()">Flash ESP <a class="comment" href="https://tagreader.mcpat.com/">here</a></button>
   <p id="demo"></p>
 </div>
-<p align="center">
+<!--<p align="center">
   <a class="comment" href="https://tagreader.mcpat.com/">Visit installer website</a>
-</p>
+</p>-->
 
