@@ -12,6 +12,21 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 	<script type="module" src="https://unpkg.com/esp-web-tools/dist/web/install-button.js?module"></script>
+	        <script>
+            window.addEventListener("load", function(event) {
+                const button = document.querySelector("esp-web-install-button");
+                const selectEl = document.querySelector("#pick-variant-selector");          
+                try{
+                    button.manifest = "https://tagreader.mcpat.com/firmware/webflash_manifest_s3octal.json";
+                    selectEl.addEventListener("change", () => {
+                        button.manifest = selectEl.value;
+                    });
+                }
+                catch(e){
+                    console.log(e);
+                }
+            },{ once: true });
+        </script>
     {% include head-custom.html %}
   </head>
   <body>
