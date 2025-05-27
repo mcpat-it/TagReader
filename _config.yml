@@ -1,6 +1,6 @@
-title: NVMe
-logo: /images/rpi.svg
-description: NVMe on RPi5.
+title: TagReader
+logo: /images/nfc.svg
+description: TagReader for ESP32.
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-cayman

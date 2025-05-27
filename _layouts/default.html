@@ -10,13 +10,35 @@
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     {% include head-custom.html %}
   </head>
   <body>
+    <script> 
+      $(document).ready(function() {
+        $(function() {
+          $('#demo').load('index2.html');      
+      });  
+      });
+    </script>
+    <!--$.get('/index2.html', function(data)
+          {
+            $('#demo2').html($(data).html());
+        });-->
+    <!--<script type="text/javascript">
+            $(document).ready(function(){
+                $('#demo2').load('/index2.html', '', function(response, status, xhr) {
+                    if (status == 'error') {
+                        var msg = "Sorry but there was an error: ";
+                        $(".content").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                });
+            });
+        </script> -->
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-      <p><img height="200px" src="/images/rpi.svg" alt="rpi"></p>
+      <p><img height="200px" src="/images/nfc.svg" alt="nfc"></p>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
