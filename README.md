@@ -21,6 +21,8 @@ This is a demo installer website for [TagReader-ESP32](https://github.com/mcpat-
 [Visit installer website](https://tagreader.mcpat.com/)
 
 <p align="center">
-  <button class="comment">Green</button>
+  <button onclick="getElementById('demo').innerHTML=Date()">What is the time?</button>
+  <p id="demo"></p>
+  <a class="comment" href="https://tagreader.mcpat.com/">Visit installer website</a>
 </p>
 
