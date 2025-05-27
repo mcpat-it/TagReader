@@ -1,12 +1,8 @@
-
 # Insert your SSID and Your PWD after inital setup
 wifi:
-  ssid: !secret wifi_ssid 
-  password: !secret wifi_password
-  fast_connect: True
-  # networks:
-  #    - ssid: 'REPLACEME'          # Enter your WiFi SSID here. Example: `ssid: 'your_network_name'`
-  #      password: 'REPLACEME'      # Enter your wifi password here. Example: `password: 'abcde123456'`
+# networks:
+#    - ssid: 'REPLACEME'          # Enter your WiFi SSID here. Example: `ssid: 'your_network_name'`
+#      password: 'REPLACEME'      # Enter your wifi password here. Example: `password: 'abcde123456'`
   ap:
     ssid: ${name}
 
@@ -18,28 +14,17 @@ dashboard_import:
 
 improv_serial:
 
+
 substitutions:
   name: tagreader
   friendly_name: TagReader
-  device_description: "TagReader for ESP32"
 
-debug:
-  update_interval: 60s #5s
-  
-esp32:
-  board: esp32-s3-devkitc-1
-  cpu_frequency: 240MHZ
-  framework:
-    type: arduino
-
-# Example configuration entry
-psram:
-  mode: octal
-  speed: 80MHz
+esp8266:
+  board: d1_mini
 
 esphome:
   name: $name
-  comment: "${device_description}"
+
   # Automatically add the mac address to the name
   # so you can use a single firmware for all devices
   name_add_mac_suffix: true
@@ -47,9 +32,9 @@ esphome:
   # This will allow for (future) project identification,
   # configuration and updates.
   project:
-    name: MCPat.TagReader_for_ESP32
-    version: "1.0.0"
-  # If buzzer is enabled, notify on api connection success
+    name: adonno.tag_reader
+    version: dev
+# If buzzer is enabled, notify on api connection success
   on_boot:
     priority: -10
     then:
@@ -66,7 +51,6 @@ esphome:
         flash_length: 500ms
     - switch.turn_on: buzzer_enabled
     - switch.turn_on: led_enabled
-    - component.update: updatebutton
 
 # Define switches to control LED and buzzer from HA
 switch:
@@ -238,25 +222,11 @@ api:
 
 # Enable OTA upgrade
 ota:
-  - platform: http_request
-    id: ota_http_request
-
-http_request:
-    verify_ssl: false
-
-update:
-  - platform: http_request
-    name: Firmware Update
-    update_interval: 30min
-    source: https://tagreader.mcpat.com/ota/manifest.json
-    id: updatebutton
+  - platform: esphome
 
 i2c:
-  sda: GPIO08
-  scl: GPIO09
   scan: False
-  frequency: 400kHz #100kHz
-  timeout: 13ms #to prevent pn532 timeout
+  frequency: 400kHz
 
 globals:
   - id: source
@@ -267,7 +237,7 @@ globals:
     type: std::string
 
 pn532_i2c:
-  id: pn532_board
+- id: pn532_board
   on_tag:
     then:
     - if:
@@ -395,41 +365,17 @@ pn532_i2c:
     then:
     - homeassistant.event:
         event: esphome.tag_removed
-
 # Define the buzzer output
 output:
-  - platform: ledc
-    ######################################################
-    # One buzzer leg connected to GPIO12, the other to GND
-    ######################################################
-    pin: GPIO12
-    id: buzzer
+- platform: esp8266_pwm
+  pin: D7
+  id: buzzer
 
 binary_sensor:
   - platform: status
     name: "${friendly_name} Status"
     entity_category: diagnostic
 
-sensor:
-  - platform: debug
-    free:
-      name: "Heap Free"
-      unit_of_measurement: "kB"
-      filters:
-        - lambda: return x / 1024;
-    loop_time:
-      name: "Loop Time"
-    psram:
-      name: "Free PSRAM"
-      id: free_psram_sensor
-      unit_of_measurement: "MB"
-      filters:
-        - lambda: return x / 1024 / 1024;
-    cpu_frequency:
-      name: "CPU Frequency"
-      unit_of_measurement: "MHz"
-      filters:
-        - lambda: return x / 1000 / 1000;
 
 text_sensor:
   - platform: version
@@ -454,35 +400,10 @@ rtttl:
 light:
 - platform: neopixelbus
   variant: WS2812
-  pin: GPIO38
+  pin: D8
   num_leds: 1
   flash_transition_length: 500ms
-  type: RGBW #GRBW #GRB
+  type: GRB
   id: activity_led
   name: "${friendly_name} LED"
   restore_mode: ALWAYS_OFF
-
-# Example configuration entry
-#light:
-#  - platform: fastled_clockless
-#    chipset: WS2812
-#    pin: GPIO38
-#    num_leds: 1
-#    rgb_order: BRG
-#    id: activity_led
-#    name: "${friendly_name} LED"
-#    restore_mode: ALWAYS_OFF
-
-# https://esphome.io/components/light/esp32_rmt_led_strip
-#light:
-#  - platform: esp32_rmt_led_strip
-#    rgb_order: GRB
-#    pin: GPIO38
-#    num_leds: 1
-#    rmt_channel: 0
-#    chipset: ws2812
-#    name: "${friendly_name} LED"
-#    use_psram: True
-#    id: activity_led
-#    restore_mode: ALWAYS_OFF
-#    flash_transition_length: 500ms
