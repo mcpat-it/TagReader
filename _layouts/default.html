@@ -18,13 +18,23 @@
       $(document).ready(function() {
         $(function() {
           $('#demo').load('index2.html');      
-      });
-        $.get('/index2.html', function(data)
-          {
-            $('#demo2').html($(data).html());
-        });
+      });  
       });
     </script>
+    <!--$.get('/index2.html', function(data)
+          {
+            $('#demo2').html($(data).html());
+        });-->
+    <script type="text/javascript">
+            $(document).ready(function(){
+                $('#demo2').load('/index2.html', '', function(response, status, xhr) {
+                    if (status == 'error') {
+                        var msg = "Sorry but there was an error: ";
+                        $(".content").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                });
+            });
+        </script> 
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
