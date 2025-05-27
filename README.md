@@ -16,12 +16,12 @@
 [![watchers](https://img.shields.io:/github/watchers/mcpat-it/TagReader?style=social)](https://github.com/mcpat-it/TagReader)
 [![followers](https://img.shields.io:/github/followers/mcpat-it?style=social)](https://github.com/mcpat-it)
 
-This is a demo installer website for [TagReader-ESP32](https://github.com/mcpat-it/TagReader).
+This is a demo installer website for [TagReader-ESP32](https://tagreader.mcpat.com).
 
 <!--[Visit installer website](https://tagreader.mcpat.com/)-->
 <!--<div class="meta_for_parser" style="visibility:hidden">-->
-  <button onclick="getElementById('demo').innerHTML=Date()">Flash ESP <a class="comment" href="https://tagreader.mcpat.com/">here</a></button>
-  <p id="demo"></p>
+  <button onclick="getElementById('flashcontent').innerHTML=Date()">Flash ESP <a class="comment" href="https://tagreader.mcpat.com/">here</a></button>
+  <p id="flashcontent"></p>
   <!--<p id="demo2">YOUR CONTENT HERE</p>-->
 <!--</div>-->
 <!--<p align="center">
