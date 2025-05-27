@@ -22,7 +22,7 @@ This is a demo installer website for [TagReader-ESP32](https://github.com/mcpat-
 <!--<div class="meta_for_parser" style="visibility:hidden">-->
   <button onclick="getElementById('demo').innerHTML=Date()">Flash ESP <a class="comment" href="https://tagreader.mcpat.com/">here</a></button>
   <p id="demo"></p>
-  <div id="content">
+  <div id="demo2">
     YOUR CONTENT HERE
   </div>
 <!--</div>-->
