@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 	<script type="module" src="https://unpkg.com/esp-web-tools/dist/web/install-button.js?module"></script>
-	        <script>
-            window.addEventListener("load", function(event) {
+	       <!-- <script>
+            	window.addEventListener("load", function(event) {
                 const button = document.querySelector("esp-web-install-button");
                 const selectEl = document.querySelector("#pick-variant-selector");          
                 try{
@@ -26,6 +26,23 @@
                     console.log(e);
                 }
             },{ once: true });
+	  	</script>-->
+	  <script>
+	    $(document).ready(function() {
+        	$(function() {
+			const button = document.querySelector("esp-web-install-button");
+                	const selectEl = document.querySelector("#pick-variant-selector");          
+                	try{
+                    		button.manifest = "https://tagreader.mcpat.com/firmware/webflash_manifest_s3octal.json";
+                    		selectEl.addEventListener("change", () => {
+                        	button.manifest = selectEl.value;
+                    		});
+                	}
+                	catch(e){
+                    	console.log(e);
+                	}
+		});  
+	    });
         </script>
     {% include head-custom.html %}
   </head>
@@ -67,7 +84,9 @@
 
     <main id="content" class="main-content" role="main">
       {{ content }}
-
+      <script>
+	      $('#flashcontent').load('index2.html body');
+      </script>
       <footer class="site-footer">
         <!--{% if site.github.is_project_page %}
           <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
