@@ -37,6 +37,7 @@
                     		selectEl.addEventListener("change", () => {
                         	button.manifest = selectEl.value;
                     		});
+				console.log("esp-web-install-button loaded...");
                 	}
                 	catch(e){
                     	console.log(e);
@@ -85,9 +86,15 @@
     <main id="content" class="main-content" role="main">
       {{ content }}
       <script>
-        $(function() {
-          $('#flashcontent').load('index2.html body');       
+        $(function loadcontent() {
+          	$('#flashcontent').load('index2.html body');
+		console.log("flashcontent loaded...");
       	});
+	loadcontent();
+
+	$(function() {
+	  console.log("function executed...");
+      	}); 
       </script>
       <footer class="site-footer">
         <!--{% if site.github.is_project_page %}
