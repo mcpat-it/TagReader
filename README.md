@@ -20,7 +20,8 @@ This is a demo installer website for [TagReader-ESP32](https://tagreader.mcpat.c
 
 <!--[Visit installer website](https://tagreader.mcpat.com/)-->
 <!--<div class="meta_for_parser" style="visibility:hidden">-->
-  <button onclick="getElementById('flashcontent').innerHTML=Date()">Flash ESP <a class="comment" href="https://tagreader.mcpat.com/">here</a></button>
+  <!--<button onclick="getElementById('flashcontent').innerHTML=Date()">Flash ESP <a class="comment" href="https://tagreader.mcpat.com/">here</a></button>-->
+  <a class="comment" href="https://tagreader.mcpat.com/">Webflash ESP here</a>
   <p id="flashcontent"></p>
   <!--<p id="demo2">YOUR CONTENT HERE</p>-->
 <!--</div>-->
