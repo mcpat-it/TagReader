@@ -85,7 +85,9 @@
     <main id="content" class="main-content" role="main">
       {{ content }}
       <script>
-	      $('#flashcontent').load('index2.html body');
+        $(function() {
+          $('#flashcontent').load('index2.html body');       
+      	});
       </script>
       <footer class="site-footer">
         <!--{% if site.github.is_project_page %}
