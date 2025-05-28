@@ -88,20 +88,22 @@
       <script>
       	$(document).ready(function() {
         	$(function() {
-          		$('#flashcontent').load('flash.html');
-			console.log("flashcontent loaded...");
-			const button = document.querySelector("esp-web-install-button");
-                	const selectEl = document.querySelector("#pick-variant-selector");          
-                	try{
-                    		button.manifest = "https://tagreader.mcpat.com/firmware/webflash_manifest_s3octal.json";
-                    		selectEl.addEventListener("change", () => {
-                        	button.manifest = selectEl.value;
-                    		});
-		    		console.log("esp-web-install-button loaded...");
-                	}
-                	catch(e){
-                    	console.log(e);
-                	}
+          		$('#flashcontent').load('flash.html', function() {
+  				/* When load is done */
+				console.log("flashcontent loaded...");
+				const button = document.querySelector("esp-web-install-button");
+                		const selectEl = document.querySelector("#pick-variant-selector");          
+                		try{
+                    			button.manifest = "https://tagreader.mcpat.com/firmware/webflash_manifest_s3octal.json";
+                    			selectEl.addEventListener("change", () => {
+                        			button.manifest = selectEl.value;
+                    			});
+		    			console.log("esp-web-install-button loaded...");
+                		}
+                		catch(e){
+                    			console.log(e);
+                		}
+			});
       		});
       	});
       </script>
