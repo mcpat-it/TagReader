@@ -1,0 +1,70 @@
+esp32:
+  board: m5stack-atom
+  framework:
+    type: esp-idf
+
+esp32_ble_tracker:
+  scan_parameters:
+    active: false
+bluetooth_proxy:
+  active: false
+
+packages:
+  atom-grove: github://luka6000/TagTuner/tagtuner-atom-grove.yaml@main
+
+i2s_audio:
+  - id: !remove i2s_audio_bus
+
+media_player:
+  - id: !remove mp1
+
+light:
+  - id: !remove led1
+  - platform: esp32_rmt_led_strip
+    id: led1
+    pin: GPIO27
+    chipset: SK6812
+    num_leds: 1
+    rgb_order: grb
+    restore_mode: ALWAYS_OFF
+    default_transition_length: 0s
+    flash_transition_length: 0s
+    effects:
+      - strobe:
+          name: HelloWorld
+          colors:
+            - state: true
+              brightness: 100%
+              red: 100%
+              green: 0%
+              blue: 0%
+              duration: 250ms
+            - state: true
+              brightness: 100%
+              red: 0%
+              green: 100%
+              blue: 0%
+              duration: 250ms
+            - state: true
+              brightness: 100%
+              red: 0%
+              green: 0%
+              blue: 100%
+              duration: 250ms
+            - state: true
+              brightness: 100%
+              red: 100%
+              green: 100%
+              blue: 100%
+              duration: 250ms
+      - strobe:
+          name: TagWrite
+          colors:
+            - state: true
+              brightness: 100%
+              red: 100%
+              green: 0%
+              blue: 0%
+              duration: 250ms
+            - state: false
+              duration: 50ms
