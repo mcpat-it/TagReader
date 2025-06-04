@@ -1,6 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 _layouts/ export-ignore
+_Archiv/ export-ignore
 assets/ export-ignore
 images/ export-ignore
 .gitattributes export-ignore
