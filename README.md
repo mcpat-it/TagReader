@@ -20,8 +20,8 @@
 <!--[Visit installer website](https://tagreader.mcpat.com/)-->
 <!--<div class="meta_for_parser" style="visibility:hidden">-->
   <!--<button onclick="getElementById('flashcontent').innerHTML=Date()">Flash ESP <a class="comment" href="https://tagreader.mcpat.com/">here</a></button>-->
-  <a class="comment" href="https://tagreader.mcpat.com/">Flash ESP via web installer here</a>
-  <p id="flashcontent"></p>
+  <!--<a class="comment" href="https://tagreader.mcpat.com/">Flash ESP via web installer here</a>-->
+  <p id="flashcontent"><a href="https://tagreader.mcpat.com/">Flash ESP via web installer here</a></p>
   <!--<p id="demo2">YOUR CONTENT HERE</p>-->
 <!--</div>-->
 <!--<p align="center">
@@ -34,7 +34,7 @@ The tag reader is a simple to build/use NFC tag reader, specially created for [H
 
 > I will create a 3D model for printing later.
 
-![Photos of the final product](xxx)
+![Photos of the final product](/images/Prototype.png)
 
 ## Building the tag reader
 
@@ -44,11 +44,11 @@ To build your own tag reader, you need the following components:
  - [PN532 NFC Reader](https://amzn.to/4kCX8Wq)
  - [Buzzer](https://amzn.to/3Z0kNYM)
 
-The 3D models for the case are [here](xxx).
+> Not yet ready: The 3D models for the case are [here](/3D).
 
 ### Connecting the components
 
-![Photo of schematics](xxx)
+![Photo of schematics](/images/ESP32-S3-DEV-KIT-N8R8-details-13.png)
 
 There are not too many components to connect, but it does require soldering. You will need the following:
 
@@ -61,7 +61,7 @@ Also, make sure that you have set the switches on the PN532 to the following:
 - Switch 1: On (up)
 - Switch 2: Off (down)
 
-This enables the PN532 module to communicate with the D1 over I2C, and is required for the modules to work together!
+This enables the PN532 module to communicate with the ESP32 over I2C, and is required for the modules to work together!
 
 To flash the reader firmware to your ESP32-S3 you point ESPHome at [tagreader.yaml](/src/tagreader.yaml).  
 > :warning: The tag reader requires ESPHome at least `2025.0.x`.
