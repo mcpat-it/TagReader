@@ -31,6 +31,7 @@
 # Tag Reader for Home Assistant
 
 The tag reader is a simple to build/use NFC tag reader, specially created for [Home Assistant](https://www.home-assistant.io). It is using a Waveshare ESP32-S3 and the PN532 NFC module. The firmware is built using [ESPhome](https://www.esphome.io) or can directly flashed via web installer.
+Credits to tagreader [^1] and TagTuner [^2] project.
 
 > I will create a 3D model for printing later.
 
@@ -86,4 +87,26 @@ Scanned tags can be managed from the tags interface in Home Assistant. You can f
 
 ## Disclamer
 
-We use Amazon affiliate links for the components and the tools. Some Ad-blockers might block these links and thus they seem to appear broken. You will have to temporarily disable the ad-blocker to open these links. 
+We use Amazon affiliate links for the components and the tools. Some Ad-blockers might block these links and thus they seem to appear broken. You will have to temporarily disable the ad-blocker to open these links.
+
+## Support my work
+I'm a working single dad and this is only my hobby which I did in my rare free time. So I really appreciate if you make a small donation to let me buy some sweets for my son!
+
+[!["Buy Me A Coffee"](images/coffee.png)](https://buymeacoff.ee/mcpat)
+[![Support via PayPal](images/paypal.svg)](https://www.paypal.com/donate/?business=2667RS4MQ9M5Y&no_recurring=1&item_name=Please+support+me+if+you+like+my+work.+Thank+you%21&currency_code=EUR)
+[![Donate](images/QR-Code.png)](https://www.paypal.com/donate/?business=2667RS4MQ9M5Y&no_recurring=1&item_name=Please+support+me+if+you+like+my+work.+Thank+you%21&currency_code=EUR)
+
+## FAQ
+
+<details markdown='1'>
+
+<summary>Something went wrong, what can I do</summary>
+	
+ - Send a request, you know I'm a busy man, but maybe I can help
+ - Compile a package, send it to me, I can add it to the repo
+
+</details>
+
+[^1]:Special thx to the [tagreader](https://github.com/adonno/tagreader) project from Adonno, was the basis for this project.
+[^2]:Special thx to the [TagTuner](https://github.com/luka6000/TagTuner) project from luka6000, it was very helpful with the patched component for reading NTAG216 and some functions from his code.
+
