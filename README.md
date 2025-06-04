@@ -21,7 +21,7 @@
 <!--<div class="meta_for_parser" style="visibility:hidden">-->
   <!--<button onclick="getElementById('flashcontent').innerHTML=Date()">Flash ESP <a class="comment" href="https://tagreader.mcpat.com/">here</a></button>-->
   <!--<a class="comment" href="https://tagreader.mcpat.com/">Flash ESP via web installer here</a>-->
-  <p id="flashcontent"><a href="https://tagreader.mcpat.com/">Flash ESP via web installer here</a></p>
+  <p id="flashcontent"><a class="comment" href="https://tagreader.mcpat.com/">Flash ESP via web installer here</a></p>
   <!--<p id="demo2">YOUR CONTENT HERE</p>-->
 <!--</div>-->
 <!--<p align="center">
