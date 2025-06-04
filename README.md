@@ -103,7 +103,6 @@ I'm a working single dad and this is only my hobby which I did in my rare free t
 <summary>Something went wrong, what can I do</summary>
 	
  - Send a request, you know I'm a busy man, but maybe I can help
- - Compile a package, send it to me, I can add it to the repo
 
 </details>
 
